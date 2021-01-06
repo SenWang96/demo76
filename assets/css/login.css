@@ -1,0 +1,55 @@
+/* 初始化 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	background: url(../images/login_bg.jpg) fixed center/ cover;
+}
+
+/* logo */
+.login_logo {
+	height: 100px;
+
+	cursor: pointer;
+}
+/* .login .login_logo img {
+	vertical-align: middle;
+} */
+/* -------登录框------ */
+.login_main {
+	position: fixed;
+	/* box-sizing: border-box; */
+	width: 400px;
+	height: 320px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	padding: 0 30px;
+	background-color: #fff;
+}
+.login_main .login_title {
+	height: 70px;
+	background: url(../images/login_title.png) no-repeat center;
+}
+.login_main .to_regi {
+	text-align: right;
+}
+
+.login_main .icon_fa {
+	position: relative;
+}
+.login_main .layui-icon {
+	position: absolute;
+	left: 10px;
+	font-size: 20px;
+	color: #777;
+	line-height: 38px;
+}
+.login_main input {
+	padding-left: 36px;
+}
