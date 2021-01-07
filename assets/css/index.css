@@ -1,1 +1,50 @@
 /* index */
+.layui-footer {
+	text-align: center;
+}
+.layui-side .userInfo {
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	border-bottom: 1px solid #000;
+}
+.layui-nav-img,
+.text-avatar {
+	width: 40px;
+	height: 40px;
+	display: none;
+}
+.text-avatar {
+	display: inline-block;
+	background-color: #009688;
+	margin-right: 10px;
+	border-radius: 50%;
+	vertical-align: middle;
+	line-height: 40px;
+	text-align: center;
+}
+.layui-nav #logout {
+	vertical-align: middle;
+}
+.layui-nav #logout span {
+	font-size: 16px;
+	padding-right: 5px;
+	vertical-align: middle;
+}
+
+.welcome {
+	color: #fff;
+	font-size: 12px;
+	user-select: none;
+}
+/* iframe */
+iframe {
+	width: 100%;
+	height: 100%;
+	background-color: rgb(242, 243, 245);
+}
+/* 给父级的div加 overflow:hidden */
+.layui-body {
+	overflow: hidden;
+}
