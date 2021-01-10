@@ -1,0 +1,7 @@
+.list_header tr th,
+tbody tr td {
+	text-align: center;
+}
+.layui-card {
+	margin: 20px;
+}

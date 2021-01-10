@@ -1,0 +1,25 @@
+html,
+body {
+	padding: 10px;
+}
+.layui-card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.addCatagory,
+.editCatagory {
+	width: 400px;
+	padding: 30px;
+	padding-bottom: 0;
+	margin: 0 auto;
+}
+.addCatagory .layui-form-label,
+.editCatagory .layui-form-label {
+	padding-right: 0;
+	width: 60px;
+}
+.addCatagory .layui-input-block,
+.editCatagory .layui-input-block {
+	margin-left: 80px;
+}

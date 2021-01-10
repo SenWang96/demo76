@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>文章分类</title>
+		<link rel="stylesheet" href="/assets/lib/layui/css/layui.css" />
+		<link rel="stylesheet" href="/assets/css/art_cate.css" />
+	</head>
+	<body>
+		<div class="layui-card">
+			<div class="layui-card-header">
+				<span>文章类别管理</span>
+				<button id="addCata" class="right layui-btn layui-btn-normal layui-btn-sm">添加类别</button>
+			</div>
+			<div class="layui-card-body">
+				<!-- 分类列表 -->
+				<table class="layui-table">
+					<thead>
+						<tr>
+							<th>分类名称</th>
+							<th>分类别名</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody class="cata_tb">
+						<tr>
+							<td>heihie</td>
+							<td>heihie</td>
+							<td>heihie</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- 添加分类弹出框 -->
+		<script type="text/html" id="addCatagory">
+			<form class="addCatagory layui-form">
+				<div class="layui-form-item">
+					<label class="layui-form-label">分类名称</label>
+					<div class="layui-input-block">
+						<input type="text" name="name" placeholder="请输入" autocomplete="off" class="layui-input" />
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">分类别名</label>
+					<div class="layui-input-block">
+						<input type="text" name="alias" placeholder="请输入" autocomplete="off" class="layui-input" />
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button class="add-cata layui-btn layui-btn-bg layui-btn-default" type="submit" layui-submit>添加</button>
+					</div>
+				</div>
+			</form>
+		</script>
+		<!-- 修改分类弹出框 -->
+		<script type="text/html" id="editCatagory">
+			<form class="editCatagory layui-form">
+				<div hidden class="layui-form-item">
+					<label class="layui-form-label">分类id</label>
+					<div class="layui-input-block">
+						<input type="text" vaule="{{data.Id}}" name="Id" placeholder="请输入" autocomplete="off" class="layui-input" />
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">分类名称</label>
+					<div class="layui-input-block">
+						<input type="text" vaule="{{data.name}}" name="name" placeholder="请输入" autocomplete="off" class="layui-input" />
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">分类别名</label>
+					<div class="layui-input-block">
+						<input type="text" vaule="{{data.alias}}" name="alias" placeholder="请输入" autocomplete="off" class="layui-input" />
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button class="edit-cata layui-btn layui-btn-bg layui-btn-default" type="submit" layui-submit>确认修改</button>
+						<button class="reset-cata layui-btn layui-btn-bg layui-btn-primary" type="button">重置</button>
+					</div>
+				</div>
+			</form>
+		</script>
+		<!-- 数据展示模板 -->
+		<script type="text/html" id="tplCata">
+			{{each data val index}}
+			<tr>
+				<td>{{val.name}}</td>
+				<td>{{val.alias}}</td>
+				<td>
+					<button class="cata_edit layui-btn layui-btn-sm layui-btn-default" data-id="{{val.Id}}" type="submit" layui-submit>编辑</button>
+					<button class="cata_del layui-btn layui-btn-sm layui-btn-danger" data-id="{{val.Id}}" type="submit">删除</button>
+				</td>
+			</tr>
+			{{/each}}
+		</script>
+		<script src="/assets/lib/jquery.js"></script>
+		<script src="/assets/lib/layui/layui.all.js"></script>
+		<!--  -->
+		<script src="/assets/js/ajaxBase.js"></script>
+		<script src="/assets/lib/template-web.js"></script>
+		<script src="/assets/js/art_cate.js"></script>
+	</body>
+</html>
