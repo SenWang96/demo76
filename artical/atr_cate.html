@@ -31,6 +31,7 @@
 						</tr>
 					</tbody>
 				</table>
+				<div id="list_paging"></div>
 			</div>
 		</div>
 		<!-- 添加分类弹出框 -->
@@ -91,14 +92,15 @@
 				<td>{{val.name}}</td>
 				<td>{{val.alias}}</td>
 				<td>
-					<button class="cata_edit layui-btn layui-btn-sm layui-btn-default" data-id="{{val.Id}}" type="submit" layui-submit>编辑</button>
-					<button class="cata_del layui-btn layui-btn-sm layui-btn-danger" data-id="{{val.Id}}" type="submit">删除</button>
+					<button class="cata_edit layui-btn layui-btn-xs layui-btn-default" data-id="{{val.Id}}" type="submit" layui-submit>编辑</button>
+					<button class="cata_del layui-btn layui-btn-xs layui-btn-danger" data-id="{{val.Id}}" type="submit">删除</button>
 				</td>
 			</tr>
 			{{/each}}
 		</script>
 		<script src="/assets/lib/jquery.js"></script>
 		<script src="/assets/lib/layui/layui.all.js"></script>
+		<script src="/static/build/layui.js"></script>
 		<!--  -->
 		<script src="/assets/js/ajaxBase.js"></script>
 		<script src="/assets/lib/template-web.js"></script>

@@ -18,6 +18,16 @@ $(function(){
     }
     getCata();
     // -----------------渲染成功
+        // 分类分页组件
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+        
+        //执行一个laypage实例
+        laypage.render({
+             elem: 'list_paging' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: 50 //数据总数，从服务端得到
+        });
+    });
 
     // 添加类别
     //  -1 open弹框 -2 点击按钮提交数据 -3 渲染数据 
@@ -100,40 +110,26 @@ $(function(){
     // 触发点击事件，发送ajax请求   
     addCata('.editCatagory','/my/article/updatecate');
 
-
-    // // 点击添加按钮，发送编辑事件
-    // function editCata(id){
-    //     $('body').on('submit','.edit-cata',function(e){
-    //         e.preventDefault();
-    //         console.log($(this).serialize());
-    //         let data =id +  $(this).serialize();
-    //         console.log(data);
-    //         // $post('/my/article/updatecate',data,function(res){
-
-    //         // })
-    //     })
-    // }
-
-
  // 删除分类
- $("tbody").on("click",'.cata_del',function(){
-    // 删除原理:根据Id删除文章分类
-    console.log($(this).attr('data-id'));
-    let Id = $(this).attr('data-id');
-    layer.confirm('确定删除？',{icon:3,title:'标题'},function(index){
-    
-    // 发送ajax请求
-    $.ajax({
-        url:'/my/article/deletecate/'+Id,
-        success:function(res){
-            if(res.status !== 0){
-                return layer.msg("删除失败了哦哦哦哦");
-            }
-            getCata();
-            layer.msg("文章删除成功了呢")  
-        }
+    $("tbody").on("click",'.cata_del',function(){
+       // 删除原理:根据Id删除文章分类
+        console.log($(this).attr('data-id'));
+        let Id = $(this).attr('data-id');
+        layer.confirm('确定删除？',{icon:3,title:'标题'},function(index){
+        // 发送ajax请求
+            $.ajax({
+                url:'/my/article/deletecate/'+Id,
+                success:function(res){
+                    if(res.status !== 0){
+                        return layer.msg("删除失败了哦哦哦哦");
+                    }
+                    getCata();
+                    layer.msg("文章删除成功了呢")  
+                }
+            })
+            layer.close(index)
+        })
     })
-    layer.close(index)
-})
-})
+
+
 })
