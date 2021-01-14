@@ -5,15 +5,12 @@ let layer = layui.layer ;
 function renderInfo(res){
     if(res.status === 0){
         // 获取需要渲染的真实用户名
-        console.log('执行了renderInfo');
-
         let data = res.data;
         let name = data.nickname || data.username;
         //渲染用户名或者昵称
        { $('#welcome').html(`欢迎&nbsp;&nbsp;${name}`) ;
-       console.log("🚀 ~ file: index.js ~ line 14 ~ renderInfo ~ name", name);
        
-    console.log('渲染了名字');}
+}
         // 获取头像并渲染头像
         // 判断用户是否有自定义头像
         if(data.user_pic){
@@ -21,6 +18,10 @@ function renderInfo(res){
             $(".text-avatar").hide();
             // 显示真实头像
             $('.layui-nav-img').show().attr('src',data.user_pic)
+        }else{
+            console.log();
+            let showName = name.split("").splice(0,1).join().toUpperCase();
+            $('.text-avatar').show().text(showName)
         }
     }
 }
@@ -34,7 +35,6 @@ function getUserinfo(){
         success: function(res){
          
             if(res.status === 0){
-                console.log('执行了getinfo');
                 renderInfo(res)
             }else{
                 

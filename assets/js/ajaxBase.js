@@ -5,7 +5,7 @@ $.ajaxPrefilter(function(option){
 
 
 
-    // 接口要求携带token信息
+    // 接口要求携带stoken信息
     if(option.url.indexOf("/my"))
     {
         option.headers = {
@@ -17,6 +17,7 @@ $.ajaxPrefilter(function(option){
         if(
             xhr.responseJSON.status === 1&& xhr.responseJSON.message ==="身份认证失败！"
         ){
+            console.log(xhr);
             location.href = '/home/login.html'
         }
       };

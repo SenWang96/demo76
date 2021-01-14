@@ -49,7 +49,6 @@ $(function(){
             success : function(res){
                 console.log(res);
                if(res.status===0){
-                   console.log('导则立');
                 // renderInfo(res)
                }
             },
@@ -57,7 +56,7 @@ $(function(){
                
             }
         })
-        $(window).parent.getUserinfo();
+        window.parent.getUserinfo();
 
     })
 })
