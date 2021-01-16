@@ -12,6 +12,7 @@ $.ajaxPrefilter(function(option){
             Authorization:localStorage.getItem('token'),
         };
     };
+    console.log(option);
     option.complete = function(xhr){
         //   console.log(this);
         if(

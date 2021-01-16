@@ -3,6 +3,7 @@
 let layer = layui.layer ; 
 
 function renderInfo(res){
+    console.log(res);
     if(res.status === 0){
         // 获取需要渲染的真实用户名
         let data = res.data;
