@@ -19,7 +19,6 @@ $(function(){
             // headers在公共配置项里进行描述了
             success : function(res){
                 setInfo(res.data);;
-                console.log(res.data);
             }
         })
     }
@@ -47,14 +46,12 @@ $(function(){
             url:"/my/userinfo",
             data,
             success : function(res){
-                console.log(res);
                if(res.status===0){
                 // renderInfo(res)
+                window.parent.getUserinfo();
                }
             },
-            complete:function(xhr){
-               
-            }
+            
         })
         window.parent.getUserinfo();
 

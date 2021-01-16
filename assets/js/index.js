@@ -6,6 +6,8 @@ function renderInfo(res){
     console.log(res);
     if(res.status === 0){
         // 获取需要渲染的真实用户名
+        // console.log('执行了renderInfo');
+
         let data = res.data;
         let name = data.nickname || data.username;
         //渲染用户名或者昵称
